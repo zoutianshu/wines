@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alex.dao.help.selectHelpInfo">
+    <resultMap type="helps" id="HelpResult">
+        <result property="title" column="title"/>
+        <result property="url" column="url"/>
+        <result property="msg" column="msg"/>
+    </resultMap>
+    <select id="SelectAll" parameterType="String" resultMap="HelpResult">
+    SELECT * FROM help_table
+</select>
+</mapper>

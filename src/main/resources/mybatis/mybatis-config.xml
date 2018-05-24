@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type='com.alex.entity.userinfo.UserInfo' alias='users' />
+        <typeAlias type="com.alex.entity.help.HelpInfo" alias="helps"/>
+        <typeAlias type="com.alex.entity.finder.FinderInfo" alias="finders"/>
+        <typeAlias type="com.alex.entity.share.ShareInfo" alias="shares"/>
+        <typeAlias type="com.alex.entity.feedback.FeedbackInfo" alias="feedbacks"/>
+    </typeAliases>
+</configuration>

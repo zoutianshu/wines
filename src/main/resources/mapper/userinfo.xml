@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alex.dao.userinfo.writeToDB">
+<resultMap type="users" id="UserList">
+    <result property="user_account" column="user_account"/>
+    <result property="user_id" column="user_id"/>
+    <result property="user_unionid" column="user_unionid"/>
+    <result property="user_nickName" column="user_nickName"/>
+    <result property="user_avatar" column="user_avatar"/>
+    <result property="user_phoneNumber" column="user_phoneNumber"/>
+    <result property="user_signature" column="user_signature"/>
+    <result property="user_gender" column="user_gender"/>
+    <result property="user_province" column="user_province"/>
+    <result property="user_city" column="user_city"/>
+    <result property="user_country" column="user_country"/>
+    <result property="last_login" column="last_login"/>
+    <result property="isVip" column="isVip"/>
+    <result property="vip_time" column="vip_time"/>
+    <result property="real_name" column="real_name"/>
+</resultMap>
+<select id="select" parameterType="long" resultMap="UserList">
+   select * from user_info where user_account = #{account}
+   </select>
+<select id="checkInfoByOpenId" parameterType="String" resultMap="UserList">
+        select * from user_info where user_id = #{openId}
+    </select>
+<insert id="insert" parameterType="users">
+    insert into user_info values (#{user_account},#{user_id},#{user_unionid},#{user_nickName},#{user_avatar},#{user_phoneNumber},#{user_signature},#{user_gender},#{user_province},#{user_city},#{user_country},#{last_login},#{isVip},#{vip_time},#{real_name})
+    </insert>
+<update id="update" parameterType="users">
+    UPDATE user_info SET user_nickName=#{user_nickName},user_avatar=#{user_avatar},user_phoneNumber=#{user_phoneNumber},user_signature=#{user_signature},user_gender=#{user_gender},user_province=#{user_province},user_city=#{user_city},user_country=#{user_country},last_login=#{last_login} WHERE user_account=#{user_account}
+    </update>
+</mapper>

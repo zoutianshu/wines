@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alex.dao.finder.finderInfo">
+    <resultMap type="finders" id="FinderResult">
+        <result property="image" column="image"/>
+        <result property="avatar" column="avatar"/>
+        <result property="title" column="title"/>
+        <result property="meta" column="meta"/>
+        <result property="nickname" column="nickname"/>
+        <result property="method" column="method"/>
+        <result property="url" column="url"/>
+    </resultMap>
+    <select id="selectFinder" resultMap="FinderResult">
+    SELECT * FROM finder_table
+</select>
+</mapper>
