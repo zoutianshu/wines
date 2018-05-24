@@ -16,6 +16,7 @@ public class HelpController {
     @RequestMapping(value = "/selectHelpInfo",method = RequestMethod.GET)
     @ResponseBody
     public Object selectHelpInfo(){
+        System.out.println(1);
         List<HelpInfo> helpInfoList=helpInfoImpl.SelectAll();
         return helpInfoList;
     }
